@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 53d391296ae4f8b44962c9eb3ad7305e
+guid: 3a1d05380c522334fa1fa8033123a035
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3168446773882052861
-    second: creature-sheet_0
+      213: -5746170801759412301
+    second: walking_one_0
   - first:
-      213: 3571685544313581091
-    second: creature-sheet_1
+      213: -3872389169220327404
+    second: walking_one_1
   - first:
-      213: -7588760171192833353
-    second: creature-sheet_2
+      213: 8718903471436147136
+    second: walking_one_2
   - first:
-      213: -4515753832633668877
-    second: creature-sheet_3
+      213: -8031513038604606267
+    second: walking_one_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -139,7 +139,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: creature-sheet_0
+      name: walking_one_0
       rect:
         serializedVersion: 2
         x: 0
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30f1701427a6704d0800000000000000
-      internalID: -3168446773882052861
+      spriteID: 3bf986ea9108140b0800000000000000
+      internalID: -5746170801759412301
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: creature-sheet_1
+      name: walking_one_1
       rect:
         serializedVersion: 2
         x: 24
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32e6536341d219130800000000000000
-      internalID: 3571685544313581091
+      spriteID: 4186d804192824ac0800000000000000
+      internalID: -3872389169220327404
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: creature-sheet_2
+      name: walking_one_2
       rect:
         serializedVersion: 2
         x: 48
@@ -195,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ba2b6ec4de4fa690800000000000000
-      internalID: -7588760171192833353
+      spriteID: 0c92fd53384cff870800000000000000
+      internalID: 8718903471436147136
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: creature-sheet_3
+      name: walking_one_3
       rect:
         serializedVersion: 2
         x: 72
@@ -216,8 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3fae2c090d1d451c0800000000000000
-      internalID: -4515753832633668877
+      spriteID: 5c4ed05b1755a8090800000000000000
+      internalID: -8031513038604606267
       vertices: []
       indices: 
       edges: []

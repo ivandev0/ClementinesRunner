@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     void Update() {
+        if (!GameManager.Instance.GameIsOn()) return;
         if (!grounded) return;
 
         if (Input.GetKeyDown("space")) {
