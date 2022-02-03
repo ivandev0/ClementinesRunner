@@ -34,9 +34,18 @@ public class GameManager : Singleton<GameManager> {
 
         scoreUi.text = "0";
         playBtn.SetActive(false);
+
+        StartCoroutine(ScoreCounter());
     }
 
     public bool GameIsOn() {
         return gameOn;
+    }
+
+    private IEnumerator ScoreCounter() {
+        while (GameIsOn()) {
+            score++;
+            yield return new WaitForSeconds(1);
+        }
     }
 }
