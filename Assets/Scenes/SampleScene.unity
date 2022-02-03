@@ -1038,6 +1038,8 @@ MonoBehaviour:
   - {fileID: 133884337}
   - {fileID: 306397078}
   - {fileID: 1889188044}
+  obstacles:
+  - {fileID: 8314819473955458480, guid: c383e3b249d8d624286282e3947fe747, type: 3}
   firstDelay: 2
   spawnRate: 2
 --- !u!1 &988175672
