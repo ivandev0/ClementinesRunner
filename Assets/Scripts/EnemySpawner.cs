@@ -23,7 +23,7 @@ public class EnemySpawner : MonoBehaviour {
 
         yield return new WaitForSeconds(firstDelay);
         while (GameManager.Instance.GameIsOn()) {
-            GameObject.Instantiate(enemies[0], spawnPosition.position, Quaternion.identity, spawnPosition);
+            GameObject.Instantiate(enemies[0], new Vector3(spawnPosition.position.x, 0, 0), Quaternion.identity, spawnPosition);
             yield return new WaitForSeconds(spawnRate);
         }
 

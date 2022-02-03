@@ -2,11 +2,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
     public float speed = 10.0f;
-    private Vector2 target;
-
-    void Start() {
-        target = new Vector2(-100.0f, transform.position.y);
-    }
+    private float target = -100;
 
     void Update() {
         if (!GameManager.Instance.GameIsOn()) {
@@ -15,7 +11,8 @@ public class Enemy : MonoBehaviour {
         }
 
         var step = speed * Time.deltaTime;
-        transform.position = Vector2.MoveTowards(transform.position, target, step);
+        var xPosition = Vector2.MoveTowards(new Vector2(transform.position.x, 0), new Vector2(target, 0), step).x;
+        transform.position = new Vector2(xPosition, transform.position.y);
     }
 
     private void OnCollisionEnter2D(Collision2D col) {

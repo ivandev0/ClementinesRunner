@@ -932,7 +932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 2642117153142797056, guid: 08a3582b39b86f14aab7a75be395f96a, type: 3}
+  - {fileID: 8299463473813196074, guid: 69b9919c80657be4db83cf28a0ab4baa, type: 3}
   firstDelay: 2
   spawnRate: 2
 --- !u!1 &988175672
