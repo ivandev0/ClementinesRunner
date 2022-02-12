@@ -14,14 +14,6 @@ jobs:
           fetch-depth: 0
           lfs: true
 
-      - uses: webfactory/ssh-agent@v0.5.2
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-      - uses: game-ci/unity-builder@v2
-        with:
-          sshAgent: ${{ env.SSH_AUTH_SOCK }}
-
       - name: Create LFS file list
         run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
 
@@ -55,12 +47,26 @@ jobs:
         with:
           targetPlatform: WebGL
 
-      - uses: game-ci/unity-builder@v2
-        with:
-          targetPlatform: WebGL
-
       - uses: actions/upload-artifact@v2
         with:
           name: build-WebGL
           path: build/WebGL
 
+  deployPages:
+    needs: buildForWebGL
+    name: Deploy to Github Pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - uses: actions/download-artifact@v2
+        with:
+          name: build-WebGL
+          path: build
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages-webgl
+          folder: build/WebGL
