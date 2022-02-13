@@ -24,13 +24,9 @@ public class PlayerController : MonoBehaviour {
         if (!grounded) return;
 
         if (Input.GetKeyDown("space")) {
-            grounded = false;
-            rigidbody2D.AddForce(new Vector2(0f, jumpForce));
+            Jump();
         } else if (Input.GetMouseButtonDown(0) && canFire) {
-            canFire = false;
-            var obj = GameObject.Instantiate(bullet, firePosition.position, bullet.transform.rotation);
-            obj.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletForce, 0f));
-            StartCoroutine(CountTillNextFire());
+            Fire();
         }
     }
 
@@ -38,6 +34,18 @@ public class PlayerController : MonoBehaviour {
         if (1 << col.gameObject.layer == groundLayer) {
             grounded = true;
         }
+    }
+
+    private void Jump() {
+        grounded = false;
+        rigidbody2D.AddForce(new Vector2(0f, jumpForce));
+    }
+
+    private void Fire() {
+        canFire = false;
+        var obj = GameObject.Instantiate(bullet, firePosition.position, bullet.transform.rotation);
+        obj.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletForce, 0f));
+        StartCoroutine(CountTillNextFire());
     }
 
     private IEnumerator CountTillNextFire() {
