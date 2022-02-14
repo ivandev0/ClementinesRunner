@@ -4,7 +4,7 @@ public abstract class AbstractEnemy : MonoBehaviour {
     public float speed = 10.0f;
     private float target = -100;
 
-    protected abstract bool DestroyOnBulletCollision { get; }
+    public abstract bool DestroyOnBulletCollision { get; }
 
     void Update() {
         if (!GameManager.Instance.GameIsOn()) {
@@ -21,9 +21,6 @@ public abstract class AbstractEnemy : MonoBehaviour {
         if (col.gameObject.CompareTag("Player")) {
             GameManager.Instance.GameOver();
             Destroy(gameObject);
-        } else if (col.gameObject.CompareTag("Bullet")) {
-            Destroy(col.gameObject);
-            if (DestroyOnBulletCollision) Destroy(gameObject);
         }
     }
 }

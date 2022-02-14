@@ -7,19 +7,19 @@ TextureImporter:
     second: MainCharacters_0
   - first:
       213: 7953466073754028564
-    second: MainCharacters_1
+    second: CharacterWalk_1
   - first:
       213: 4514157674272414690
-    second: MainCharacters_2
+    second: CharacterWalk_2
   - first:
       213: 3375484687262780139
-    second: MainCharacters_3
+    second: CharacterWalk_3
   - first:
       213: 9068088882720060120
-    second: MainCharacters_4
+    second: CharacterWalk_4
   - first:
       213: -5877027176479331252
-    second: MainCharacters_5
+    second: CharacterWalk_5
   - first:
       213: 5158765549826226254
     second: MainCharacters_6
@@ -38,6 +38,33 @@ TextureImporter:
   - first:
       213: 6297995566213410644
     second: Bullet_Move_2
+  - first:
+      213: 8255643309243954914
+    second: Obstacke_0
+  - first:
+      213: 3247535976129687445
+    second: Obstacke_1
+  - first:
+      213: -7840376920182668359
+    second: JumpingEnemy_0
+  - first:
+      213: -4214386468281271515
+    second: JumpingEnemy_1
+  - first:
+      213: -4458792201013211482
+    second: JumpingEnemy_2
+  - first:
+      213: -6754411427953893959
+    second: FlyingEnemy_0
+  - first:
+      213: -3467005065808056951
+    second: FlyingEnemy_1
+  - first:
+      213: -6842542047105884710
+    second: BulletFalling
+  - first:
+      213: 3993279299709351016
+    second: BulletDead
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -184,7 +211,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MainCharacters_1
+      name: CharacterWalk_1
       rect:
         serializedVersion: 2
         x: 68
@@ -205,7 +232,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MainCharacters_2
+      name: CharacterWalk_2
       rect:
         serializedVersion: 2
         x: 134
@@ -226,7 +253,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MainCharacters_3
+      name: CharacterWalk_3
       rect:
         serializedVersion: 2
         x: 200
@@ -247,7 +274,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MainCharacters_4
+      name: CharacterWalk_4
       rect:
         serializedVersion: 2
         x: 266
@@ -268,7 +295,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MainCharacters_5
+      name: CharacterWalk_5
       rect:
         serializedVersion: 2
         x: 332
@@ -359,8 +386,8 @@ TextureImporter:
         y: 529
         width: 16
         height: 13
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -380,8 +407,8 @@ TextureImporter:
         y: 529
         width: 13
         height: 13
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -401,8 +428,8 @@ TextureImporter:
         y: 529
         width: 13
         height: 13
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -410,6 +437,195 @@ TextureImporter:
       bones: []
       spriteID: 45fa2296999f66750800000000000000
       internalID: 6297995566213410644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Obstacke_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 865
+        width: 74
+        height: 33
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e6f0d779dfe19270800000000000000
+      internalID: 8255643309243954914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Obstacke_1
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 865
+        width: 74
+        height: 33
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59fe28c93c0911d20800000000000000
+      internalID: 3247535976129687445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpingEnemy_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 739
+        width: 39
+        height: 25
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b3475f2bb2613390800000000000000
+      internalID: -7840376920182668359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpingEnemy_1
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 739
+        width: 39
+        height: 25
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52bb1ebf5dd7385c0800000000000000
+      internalID: -4214386468281271515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpingEnemy_2
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 739
+        width: 39
+        height: 25
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ae435bed103f12c0800000000000000
+      internalID: -4458792201013211482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlyingEnemy_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 706
+        width: 17
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bd18f9b7928342a0800000000000000
+      internalID: -6754411427953893959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlyingEnemy_1
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 706
+        width: 17
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98de70af249b2efc0800000000000000
+      internalID: -3467005065808056951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BulletFalling
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 504
+        width: 16
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: add5491f2486a01a0800000000000000
+      internalID: -6842542047105884710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BulletDead
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 485
+        width: 16
+        height: 9
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 864b814ad5afa6730800000000000000
+      internalID: 3993279299709351016
       vertices: []
       indices: 
       edges: []
