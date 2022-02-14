@@ -8,6 +8,7 @@ public class GameManager : Singleton<GameManager> {
     private long score = 0;
     private int gameLevel = 1;
 
+    public float gameSpeed = 1;
     public GameObject playBtn;
     public Text scoreUi;
 

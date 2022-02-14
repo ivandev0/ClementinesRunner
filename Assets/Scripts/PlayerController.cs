@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
     public float jumpForce = 400f;
-    public float bulletForce = 800f;
     public float deltaFire = 1.0f;
     public LayerMask groundLayer;
     public GameObject bullet;
@@ -44,7 +43,7 @@ public class PlayerController : MonoBehaviour {
     private void Fire() {
         canFire = false;
         var obj = GameObject.Instantiate(bullet, firePosition.position, bullet.transform.rotation);
-        obj.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletForce, 0f));
+        obj.GetComponent<Rigidbody2D>().AddForce(new Vector2(Bullet.bulletForce, 0f));
         StartCoroutine(CountTillNextFire());
     }
 

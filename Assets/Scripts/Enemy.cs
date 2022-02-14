@@ -1,5 +1,5 @@
 using UnityEngine;
 
 public class Enemy : AbstractEnemy {
-	protected override bool DestroyOnBulletCollision => true;
+	public override bool DestroyOnBulletCollision => true;
 }

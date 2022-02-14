@@ -3,5 +3,5 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Obstacle : AbstractEnemy {
-	protected override bool DestroyOnBulletCollision => false;
+	public override bool DestroyOnBulletCollision => false;
 }

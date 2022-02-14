@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BackgroundLoop : MonoBehaviour {
-    public float backgroundSpeed = 0.25f;
     private new Renderer renderer;
 
     void Start() {
@@ -11,6 +10,6 @@ public class BackgroundLoop : MonoBehaviour {
     }
 
     void Update() {
-        renderer.material.mainTextureOffset += new Vector2(backgroundSpeed * Time.deltaTime, 0);
+        renderer.material.mainTextureOffset += new Vector2(GameManager.Instance.gameSpeed * Time.deltaTime * 0.25f, 0);
     }
 }
