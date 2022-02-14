@@ -32,7 +32,7 @@ public class Bullet : MonoBehaviour {
 		if (collision.gameObject.CompareTag("Enemy")) {
 			var enemy = collision.gameObject.GetComponent<AbstractEnemy>();
 			if (enemy.DestroyOnBulletCollision) {
-				Destroy(collision.gameObject);
+				enemy.Die();
 			}
 			animator.SetBool(hit, true);
 			rigidbody2D.velocity = Vector2.zero;
