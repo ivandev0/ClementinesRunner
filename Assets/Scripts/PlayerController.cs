@@ -10,11 +10,13 @@ public class PlayerController : MonoBehaviour {
     public GameObject bullet;
     public Transform firePosition;
 
+    private Animator animator;
     private new Rigidbody2D rigidbody2D;
     private bool grounded = true;
     private bool canFire = true;
 
     void Start() {
+        animator = GetComponent<Animator>();
         rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
@@ -44,11 +46,13 @@ public class PlayerController : MonoBehaviour {
         canFire = false;
         var obj = GameObject.Instantiate(bullet, firePosition.position, bullet.transform.rotation);
         obj.GetComponent<Rigidbody2D>().AddForce(new Vector2(Bullet.bulletForce, 0f));
+        animator.Play("Player_walk", 0, animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
         StartCoroutine(CountTillNextFire());
     }
 
     private IEnumerator CountTillNextFire() {
         yield return new WaitForSeconds(deltaFire);
         canFire = true;
+        animator.Play("Player_walk_full", 0, animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
     }
 }

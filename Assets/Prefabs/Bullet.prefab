@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f77c0894c6b74ebc866e8d4d65918287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceBeforeHit: 5
+  distanceBeforeHit: 3
 --- !u!61 &4480792427020439427
 BoxCollider2D:
   m_ObjectHideFlags: 0
