@@ -5,13 +5,16 @@ namespace Enemies {
 		public LayerMask groundLayer;
 		private bool grounded = false;
 
-		private Animator animator;
-
-		private void Start() {
-			animator = GetComponent<Animator>();
-		}
-
 		private void FixedUpdate() {
+			if (!GameManager.Instance.GameIsOn()) {
+				animator.speed = 0;
+				var rigidbody2D = GetComponent<Rigidbody2D>();
+				rigidbody2D.gravityScale = 0;
+				rigidbody2D.isKinematic = true;
+				rigidbody2D.velocity = Vector2.zero;
+				return;
+			}
+
 			if (grounded && animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.999f) {
 				animator.Play("JumpingEnemy_up", 0, 0);
 				grounded = false;

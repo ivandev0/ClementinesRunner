@@ -6,10 +6,12 @@ using UnityEngine.UI;
 
 public class GameManager : Singleton<GameManager> {
     private bool gameOn = false;
+    private bool gameEnd = false;
     private float score = 0;
     private int gameLevel = 1;
 
     public float gameSpeed = 1;
+    public float defaultGravity = 3.0f;
     public GameObject playBtn;
     public Text scoreUi;
     public GameObject finalPanelUi;
@@ -26,6 +28,7 @@ public class GameManager : Singleton<GameManager> {
 
     public void GameOver() {
         gameOn = false;
+        gameEnd = true;
 
         finalPanelUi.SetActive(true);
         finalScoreUi.text = Mathf.FloorToInt(score).ToString();
@@ -35,20 +38,33 @@ public class GameManager : Singleton<GameManager> {
 
     public void NewGame() {
         gameOn = true;
+        gameEnd = false;
+
         score = 0;
+        scoreUi.text = "0";
         gameLevel = 1;
         gameSpeed = 1;
 
-        scoreUi.text = "0";
         playBtn.SetActive(false);
         finalPanelUi.SetActive(false);
 
         StartCoroutine(ScoreCounter());
         StartCoroutine(GameSpeedController());
+
+        foreach (var enemy in GameObject.FindGameObjectsWithTag("Enemy")) {
+            Destroy(enemy);
+        }
+        foreach (var bullet in GameObject.FindGameObjectsWithTag("Bullet")) {
+            Destroy(bullet);
+        }
     }
 
     public bool GameIsOn() {
         return gameOn;
+    }
+
+    public bool GameIsOver() {
+        return gameEnd;
     }
 
     private IEnumerator ScoreCounter() {

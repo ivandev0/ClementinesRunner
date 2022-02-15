@@ -18,6 +18,11 @@ public class Bullet : MonoBehaviour {
 	}
 
 	private void Update() {
+		if (!GameManager.Instance.GameIsOn()) {
+			animator.speed = 0;
+			rigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
+		}
+
 		var hits = Physics2D.RaycastAll(transform.position, Vector2.right, float.MaxValue);
 		foreach (var raycastHit2D in hits) {
 			if (raycastHit2D.collider.gameObject.CompareTag("Enemy")) {

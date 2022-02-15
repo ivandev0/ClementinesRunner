@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Enemies {
@@ -6,14 +8,21 @@ namespace Enemies {
         private float target = -100;
         private bool isDead = false;
 
+        protected Animator animator;
         public abstract bool DestroyOnBulletCollision { get; }
+
+        protected void Start() {
+            animator = GetComponent<Animator>();
+            StartCoroutine(DieTimer());
+        }
 
         protected void Update() {
             if (!GameManager.Instance.GameIsOn()) {
-                Destroy(gameObject);
+                animator.speed = 0;
                 return;
             }
 
+            animator.speed = 1;
             if (isDead) return;
             var step = GameManager.Instance.gameSpeed * speed * Time.deltaTime;
             var xPosition = Vector2.MoveTowards(new Vector2(transform.position.x, 0), new Vector2(target, 0), step).x;
@@ -31,8 +40,12 @@ namespace Enemies {
         protected void OnCollisionEnter2D(Collision2D col) {
             if (col.gameObject.CompareTag("Player")) {
                 GameManager.Instance.GameOver();
-                Destroy(gameObject);
             }
+        }
+
+        private IEnumerator DieTimer() {
+            yield return new WaitForSeconds(20);
+            Destroy(gameObject);
         }
     }
 }
