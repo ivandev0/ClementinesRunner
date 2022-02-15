@@ -15,7 +15,7 @@ namespace Enemies {
             }
 
             if (isDead) return;
-            var step = speed * Time.deltaTime;
+            var step = GameManager.Instance.gameSpeed * speed * Time.deltaTime;
             var xPosition = Vector2.MoveTowards(new Vector2(transform.position.x, 0), new Vector2(target, 0), step).x;
             transform.position = new Vector2(xPosition, transform.position.y);
         }

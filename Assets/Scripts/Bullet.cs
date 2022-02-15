@@ -45,7 +45,7 @@ public class Bullet : MonoBehaviour {
 			animator.SetBool(dead, true);
 
 			rigidbody2D.gravityScale = 0;
-			rigidbody2D.AddForce(bulletForce * 2f * Vector2.left);
+			rigidbody2D.AddForce(bulletForce * 1.5f * Vector2.left);
 			GetComponent<BoxCollider2D>().isTrigger = true;
 		}
 	}
