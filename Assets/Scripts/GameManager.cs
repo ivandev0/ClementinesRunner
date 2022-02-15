@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : Singleton<GameManager> {
     private bool gameOn = false;
-    private long score = 0;
+    private float score = 0;
     private int gameLevel = 1;
 
     public float gameSpeed = 1;
@@ -18,7 +19,7 @@ public class GameManager : Singleton<GameManager> {
     }
 
     void Update() {
-        scoreUi.text = score.ToString();
+        scoreUi.text = Mathf.FloorToInt(score).ToString();
     }
 
     public void GameOver() {
@@ -32,11 +33,13 @@ public class GameManager : Singleton<GameManager> {
         gameOn = true;
         score = 0;
         gameLevel = 1;
+        gameSpeed = 1;
 
         scoreUi.text = "0";
         playBtn.SetActive(false);
 
         StartCoroutine(ScoreCounter());
+        StartCoroutine(GameSpeedController());
     }
 
     public bool GameIsOn() {
@@ -45,8 +48,15 @@ public class GameManager : Singleton<GameManager> {
 
     private IEnumerator ScoreCounter() {
         while (GameIsOn()) {
-            score++;
+            score += gameSpeed * 1.0f;
             yield return new WaitForSeconds(1);
+        }
+    }
+
+    private IEnumerator GameSpeedController() {
+        while (GameIsOn() || gameSpeed <= 2) {
+            yield return new WaitForSeconds(5);
+            gameSpeed += 0.1f;
         }
     }
 }
