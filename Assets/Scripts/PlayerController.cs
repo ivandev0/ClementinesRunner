@@ -1,7 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Numerics;
 using UnityEngine;
 using Vector2 = UnityEngine.Vector2;
 
@@ -43,7 +40,7 @@ public class PlayerController : MonoBehaviour {
 
         if (!GameManager.Instance.GameIsOn()) return;
         animator.speed = 1f;
-        rigidbody2D.gravityScale = GameManager.Instance.defaultGravity;
+        rigidbody2D.gravityScale = -Physics2D.gravity.y;
 
         if (!grounded) return;
 
@@ -91,6 +88,8 @@ public class PlayerController : MonoBehaviour {
     private IEnumerator CountTillNextFire() {
         yield return new WaitForSeconds(deltaFire);
         canFire = true;
-        animator.Play("Player_walk_full", 0, animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
+        if (grounded) {
+            animator.Play("Player_walk_full", 0, animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
+        }
     }
 }

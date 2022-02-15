@@ -8,14 +8,19 @@ public class GameManager : Singleton<GameManager> {
     private bool gameOn = false;
     private bool gameEnd = false;
     private float score = 0;
-    private int gameLevel = 1;
 
+    public int gameLevel = 0;
     public float gameSpeed = 1;
-    public float defaultGravity = 3.0f;
     public GameObject playBtn;
     public Text scoreUi;
     public GameObject finalPanelUi;
     public Text finalScoreUi;
+
+    public int maxGameLevel = 3;
+
+    private Coroutine scoreCounter;
+    private Coroutine gameSpeedController;
+    private Coroutine gameLevelController;
 
     void Start()
     {
@@ -34,6 +39,9 @@ public class GameManager : Singleton<GameManager> {
         finalScoreUi.text = Mathf.FloorToInt(score).ToString();
         playBtn.SetActive(true);
 
+        StopCoroutine(scoreCounter);
+        StopCoroutine(gameSpeedController);
+        StopCoroutine(gameLevelController);
     }
 
     public void NewGame() {
@@ -42,14 +50,15 @@ public class GameManager : Singleton<GameManager> {
 
         score = 0;
         scoreUi.text = "0";
-        gameLevel = 1;
+        gameLevel = 0;
         gameSpeed = 1;
 
         playBtn.SetActive(false);
         finalPanelUi.SetActive(false);
 
-        StartCoroutine(ScoreCounter());
-        StartCoroutine(GameSpeedController());
+        scoreCounter = StartCoroutine(ScoreCounter());
+        gameSpeedController = StartCoroutine(GameSpeedController());
+        gameLevelController = StartCoroutine(GameLevelController());
 
         foreach (var enemy in GameObject.FindGameObjectsWithTag("Enemy")) {
             Destroy(enemy);
@@ -78,6 +87,13 @@ public class GameManager : Singleton<GameManager> {
         while (GameIsOn() || gameSpeed <= 2) {
             yield return new WaitForSeconds(5);
             gameSpeed += 0.1f;
+        }
+    }
+
+    private IEnumerator GameLevelController() {
+        while (GameIsOn() && gameLevel < maxGameLevel) {
+            yield return new WaitForSeconds(10);
+            gameLevel++;
         }
     }
 }
