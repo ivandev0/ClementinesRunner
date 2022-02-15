@@ -507,8 +507,8 @@ GameObject:
   - component: {fileID: 350671032}
   - component: {fileID: 350671035}
   - component: {fileID: 350671034}
-  - component: {fileID: 350671036}
   - component: {fileID: 350671033}
+  - component: {fileID: 350671036}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -652,6 +652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 600
   deltaFire: 1
+  moveSpeed: 4
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -981,7 +982,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &944784264
 Transform:
   m_ObjectHideFlags: 0

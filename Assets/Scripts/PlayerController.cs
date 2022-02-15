@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
     public float jumpForce = 400f;
     public float deltaFire = 1.0f;
+    public float moveSpeed = 4.0f;
     public LayerMask groundLayer;
     public GameObject bullet;
     public Transform firePosition;
@@ -15,19 +16,42 @@ public class PlayerController : MonoBehaviour {
     private bool grounded = true;
     private bool canFire = true;
 
+    private float minimumX;
+    private float maximumX;
+
     void Start() {
         animator = GetComponent<Animator>();
         rigidbody2D = GetComponent<Rigidbody2D>();
+        var colliderXSize = GetComponent<CapsuleCollider2D>().size.x;
+
+        var verticalExtent = Camera.main.orthographicSize;
+        var horizontalExtent = verticalExtent * Screen.width / Screen.height;
+        minimumX = -horizontalExtent + colliderXSize * 4;
+        maximumX = -colliderXSize;
     }
 
     void Update() {
         if (!GameManager.Instance.GameIsOn()) return;
+        animator.speed = 1f;
+
         if (!grounded) return;
 
         if (Input.GetKeyDown("space")) {
             Jump();
         } else if (Input.GetMouseButtonDown(0) && canFire) {
             Fire();
+        } else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) {
+            var position = transform.position;
+            var newX = Mathf.Clamp(position.x - moveSpeed * Time.deltaTime, minimumX, maximumX);
+            position = new Vector2(newX, position.y);
+            transform.position = position;
+            animator.speed = 0.6f;
+        } else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) {
+            var position = transform.position;
+            var newX = Mathf.Clamp(position.x + moveSpeed * Time.deltaTime, minimumX, maximumX);
+            position = new Vector2(newX, position.y);
+            transform.position = position;
+            animator.speed = 1.3f;
         }
     }
 
