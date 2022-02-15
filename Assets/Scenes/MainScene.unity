@@ -1307,6 +1307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameSpeed: 1
+  defaultGravity: 3
   playBtn: {fileID: 171887689}
   scoreUi: {fileID: 1123349861}
   finalPanelUi: {fileID: 6559084729536278564}

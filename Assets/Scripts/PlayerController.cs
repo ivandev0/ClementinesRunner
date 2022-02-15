@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
+using Vector2 = UnityEngine.Vector2;
 
 public class PlayerController : MonoBehaviour {
     public float jumpForce = 400f;
@@ -33,8 +35,15 @@ public class PlayerController : MonoBehaviour {
     }
 
     void Update() {
+        if (GameManager.Instance.GameIsOver()) {
+            animator.speed = 0;
+            rigidbody2D.gravityScale = 0;
+            rigidbody2D.velocity = Vector2.zero;
+        }
+
         if (!GameManager.Instance.GameIsOn()) return;
         animator.speed = 1f;
+        rigidbody2D.gravityScale = GameManager.Instance.defaultGravity;
 
         if (!grounded) return;
 

@@ -10,6 +10,7 @@ public class BackgroundLoop : MonoBehaviour {
     }
 
     void Update() {
+        if (GameManager.Instance.GameIsOver()) return;
         renderer.material.mainTextureOffset += new Vector2(GameManager.Instance.gameSpeed * Time.deltaTime * 0.25f, 0);
     }
 }
