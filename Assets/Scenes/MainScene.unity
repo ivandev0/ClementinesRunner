@@ -595,7 +595,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 9.81
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -699,9 +699,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b0b7c767988b9e4cab0af8cf42ab291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 600
-  deltaFire: 1
-  moveSpeed: 4
+  jumpForce: 1300
+  deltaFire: 1.4
+  moveSpeed: 8
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -1160,24 +1160,108 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e61bfa66455e92438cd9f4f11a5eb87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies:
-  - {fileID: 2642117153142797056, guid: 08a3582b39b86f14aab7a75be395f96a, type: 3}
-  - {fileID: 8299463473813196074, guid: 69b9919c80657be4db83cf28a0ab4baa, type: 3}
-  - {fileID: 8299463473813196074, guid: 69b9919c80657be4db83cf28a0ab4baa, type: 3}
-  - {fileID: 7638765184141712182, guid: 0212452ae0f5c134bb87309d9a6f3e25, type: 3}
-  - {fileID: 7638765184141712182, guid: 0212452ae0f5c134bb87309d9a6f3e25, type: 3}
-  - {fileID: 7638765184141712182, guid: 0212452ae0f5c134bb87309d9a6f3e25, type: 3}
-  spawnPoints:
-  - {fileID: 1813227434}
-  - {fileID: 71400117}
-  - {fileID: 1797754115}
-  - {fileID: 133884337}
-  - {fileID: 306397078}
-  - {fileID: 1889188044}
-  obstacles:
-  - {fileID: 8314819473955458480, guid: c383e3b249d8d624286282e3947fe747, type: 3}
-  firstDelay: 2
-  spawnRate: 2
+  enemiesByLevel:
+  - enemies:
+    - {fileID: 2642117153142797056, guid: 08a3582b39b86f14aab7a75be395f96a, type: 3}
+    - {fileID: 8314819473955458480, guid: c383e3b249d8d624286282e3947fe747, type: 3}
+    spawnPoints:
+    - {fileID: 1813227434}
+    - {fileID: 1813227434}
+  - enemies:
+    - {fileID: 2642117153142797056, guid: 08a3582b39b86f14aab7a75be395f96a, type: 3}
+    - {fileID: 8314819473955458480, guid: c383e3b249d8d624286282e3947fe747, type: 3}
+    - {fileID: 7638765184141712182, guid: 0212452ae0f5c134bb87309d9a6f3e25, type: 3}
+    - {fileID: 7638765184141712182, guid: 0212452ae0f5c134bb87309d9a6f3e25, type: 3}
+    - {fileID: 7638765184141712182, guid: 0212452ae0f5c134bb87309d9a6f3e25, type: 3}
+    spawnPoints:
+    - {fileID: 1813227434}
+    - {fileID: 1813227434}
+    - {fileID: 133884337}
+    - {fileID: 306397078}
+    - {fileID: 1889188044}
+  - enemies:
+    - {fileID: 2642117153142797056, guid: 08a3582b39b86f14aab7a75be395f96a, type: 3}
+    - {fileID: 8314819473955458480, guid: c383e3b249d8d624286282e3947fe747, type: 3}
+    - {fileID: 7638765184141712182, guid: 0212452ae0f5c134bb87309d9a6f3e25, type: 3}
+    - {fileID: 7638765184141712182, guid: 0212452ae0f5c134bb87309d9a6f3e25, type: 3}
+    - {fileID: 7638765184141712182, guid: 0212452ae0f5c134bb87309d9a6f3e25, type: 3}
+    - {fileID: 8299463473813196074, guid: 69b9919c80657be4db83cf28a0ab4baa, type: 3}
+    - {fileID: 8299463473813196074, guid: 69b9919c80657be4db83cf28a0ab4baa, type: 3}
+    spawnPoints:
+    - {fileID: 1813227434}
+    - {fileID: 1813227434}
+    - {fileID: 133884337}
+    - {fileID: 306397078}
+    - {fileID: 1889188044}
+    - {fileID: 71400117}
+    - {fileID: 1797754115}
+  - enemies:
+    - {fileID: 2642117153142797056, guid: 08a3582b39b86f14aab7a75be395f96a, type: 3}
+    - {fileID: 8314819473955458480, guid: c383e3b249d8d624286282e3947fe747, type: 3}
+    - {fileID: 7638765184141712182, guid: 0212452ae0f5c134bb87309d9a6f3e25, type: 3}
+    - {fileID: 7638765184141712182, guid: 0212452ae0f5c134bb87309d9a6f3e25, type: 3}
+    - {fileID: 7638765184141712182, guid: 0212452ae0f5c134bb87309d9a6f3e25, type: 3}
+    - {fileID: 8299463473813196074, guid: 69b9919c80657be4db83cf28a0ab4baa, type: 3}
+    - {fileID: 8299463473813196074, guid: 69b9919c80657be4db83cf28a0ab4baa, type: 3}
+    spawnPoints:
+    - {fileID: 1813227434}
+    - {fileID: 1813227434}
+    - {fileID: 133884337}
+    - {fileID: 306397078}
+    - {fileID: 1889188044}
+    - {fileID: 71400117}
+    - {fileID: 1797754115}
+  patterns:
+  - enemies:
+    - {fileID: 7638765184141712182, guid: 0212452ae0f5c134bb87309d9a6f3e25, type: 3}
+    - {fileID: 7638765184141712182, guid: 0212452ae0f5c134bb87309d9a6f3e25, type: 3}
+    - {fileID: 7638765184141712182, guid: 0212452ae0f5c134bb87309d9a6f3e25, type: 3}
+    spawnPoints:
+    - {fileID: 133884337}
+    - {fileID: 306397078}
+    - {fileID: 1889188044}
+    delay: 1
+  - enemies:
+    - {fileID: 7638765184141712182, guid: 0212452ae0f5c134bb87309d9a6f3e25, type: 3}
+    - {fileID: 7638765184141712182, guid: 0212452ae0f5c134bb87309d9a6f3e25, type: 3}
+    - {fileID: 7638765184141712182, guid: 0212452ae0f5c134bb87309d9a6f3e25, type: 3}
+    spawnPoints:
+    - {fileID: 1889188044}
+    - {fileID: 306397078}
+    - {fileID: 133884337}
+    delay: 1
+  - enemies:
+    - {fileID: 8299463473813196074, guid: 69b9919c80657be4db83cf28a0ab4baa, type: 3}
+    - {fileID: 8299463473813196074, guid: 69b9919c80657be4db83cf28a0ab4baa, type: 3}
+    spawnPoints:
+    - {fileID: 71400117}
+    - {fileID: 1797754115}
+    delay: 2
+  - enemies:
+    - {fileID: 8299463473813196074, guid: 69b9919c80657be4db83cf28a0ab4baa, type: 3}
+    - {fileID: 8299463473813196074, guid: 69b9919c80657be4db83cf28a0ab4baa, type: 3}
+    spawnPoints:
+    - {fileID: 1797754115}
+    - {fileID: 71400117}
+    delay: 2
+  - enemies:
+    - {fileID: 8314819473955458480, guid: c383e3b249d8d624286282e3947fe747, type: 3}
+    - {fileID: 8314819473955458480, guid: c383e3b249d8d624286282e3947fe747, type: 3}
+    spawnPoints:
+    - {fileID: 1813227434}
+    - {fileID: 1813227434}
+    delay: 1
+  - enemies:
+    - {fileID: 8314819473955458480, guid: c383e3b249d8d624286282e3947fe747, type: 3}
+    - {fileID: 8314819473955458480, guid: c383e3b249d8d624286282e3947fe747, type: 3}
+    - {fileID: 8314819473955458480, guid: c383e3b249d8d624286282e3947fe747, type: 3}
+    spawnPoints:
+    - {fileID: 1813227434}
+    - {fileID: 1813227434}
+    - {fileID: 1813227434}
+    delay: 1
+  firstDelay: 1
+  spawnRate: 1.5
 --- !u!1 &988175672
 GameObject:
   m_ObjectHideFlags: 0
@@ -1309,12 +1393,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20aaee17785fe724d8cfd5edeca480d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameLevel: 1
   gameSpeed: 1
-  defaultGravity: 3
   playBtn: {fileID: 171887689}
   scoreUi: {fileID: 1123349861}
   finalPanelUi: {fileID: 6559084729536278564}
   finalScoreUi: {fileID: 1019401406}
+  maxGameLevel: 3
 --- !u!4 &1015020604
 Transform:
   m_ObjectHideFlags: 0
