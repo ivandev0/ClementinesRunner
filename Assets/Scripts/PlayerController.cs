@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour {
 
     private Animator animator;
     private new Rigidbody2D rigidbody2D;
+    private new AudioSource audio;
     private bool grounded = true;
     private bool canFire = true;
 
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour {
     void Start() {
         animator = GetComponent<Animator>();
         rigidbody2D = GetComponent<Rigidbody2D>();
+        audio = GetComponent<AudioSource>();
         var colliderXSize = GetComponent<CapsuleCollider2D>().size.x;
 
         var verticalExtent = Camera.main.orthographicSize;
@@ -73,6 +75,7 @@ public class PlayerController : MonoBehaviour {
         var obj = GameObject.Instantiate(bullet, firePosition.position, bullet.transform.rotation);
         obj.GetComponent<Rigidbody2D>().AddForce(new Vector2(Bullet.bulletForce, 0f));
         animator.Play("Player_walk", 0, animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
+        audio.Play();
         StartCoroutine(CountTillNextFire());
     }
 
