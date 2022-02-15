@@ -1,9 +1,10 @@
 using System;
+using Enemies;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour {
 	public float distanceBeforeHit = 2f;
-	public static float bulletForce = 200f;
+	public static float bulletForce = 500f;
 
 	private Animator animator;
 	private Rigidbody2D rigidbody2D;
@@ -36,7 +37,7 @@ public class Bullet : MonoBehaviour {
 			}
 			animator.SetBool(hit, true);
 			rigidbody2D.velocity = Vector2.zero;
-			rigidbody2D.gravityScale = 9.8f;
+			rigidbody2D.gravityScale = 3f;
 
 			GetComponent<CircleCollider2D>().enabled = false;
 			GetComponent<BoxCollider2D>().enabled = true;

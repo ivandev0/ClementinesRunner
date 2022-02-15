@@ -83,6 +83,12 @@ TextureImporter:
   - first:
       213: -5815369142145659896
     second: CharacterWalkFull_6
+  - first:
+      213: -11070212054192940
+    second: CharacterJump_0
+  - first:
+      213: -1069600542270458934
+    second: CharacterJump_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -770,6 +776,48 @@ TextureImporter:
       bones: []
       spriteID: 80cc3ac8398ab4fa0800000000000000
       internalID: -5815369142145659896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharacterJump_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 586
+        width: 63
+        height: 104
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dcebe663bba8dff0800000000000000
+      internalID: -11070212054192940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharacterJump_1
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 587
+        width: 63
+        height: 103
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac3776a49f30821f0800000000000000
+      internalID: -1069600542270458934
       vertices: []
       indices: 
       edges: []
