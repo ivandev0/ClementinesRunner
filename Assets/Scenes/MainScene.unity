@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 71400117}
   m_Layer: 0
-  m_Name: JumpingSP
+  m_Name: JumpingSP_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,7 +147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 71400116}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 2.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 944784264}
@@ -251,7 +251,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 944784264}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &171887689
 GameObject:
@@ -541,7 +541,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 944784264}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &350671030
 GameObject:
@@ -1141,6 +1141,7 @@ Transform:
   m_Children:
   - {fileID: 1813227434}
   - {fileID: 71400117}
+  - {fileID: 1797754115}
   - {fileID: 133884337}
   - {fileID: 306397078}
   - {fileID: 1889188044}
@@ -1162,12 +1163,14 @@ MonoBehaviour:
   enemies:
   - {fileID: 2642117153142797056, guid: 08a3582b39b86f14aab7a75be395f96a, type: 3}
   - {fileID: 8299463473813196074, guid: 69b9919c80657be4db83cf28a0ab4baa, type: 3}
+  - {fileID: 8299463473813196074, guid: 69b9919c80657be4db83cf28a0ab4baa, type: 3}
   - {fileID: 7638765184141712182, guid: 0212452ae0f5c134bb87309d9a6f3e25, type: 3}
   - {fileID: 7638765184141712182, guid: 0212452ae0f5c134bb87309d9a6f3e25, type: 3}
   - {fileID: 7638765184141712182, guid: 0212452ae0f5c134bb87309d9a6f3e25, type: 3}
   spawnPoints:
   - {fileID: 1813227434}
   - {fileID: 71400117}
+  - {fileID: 1797754115}
   - {fileID: 133884337}
   - {fileID: 306397078}
   - {fileID: 1889188044}
@@ -1843,6 +1846,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1731330619}
   m_CullTransparentMesh: 1
+--- !u!1 &1797754114
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1797754115}
+  m_Layer: 0
+  m_Name: JumpingSP_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1797754115
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797754114}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 4.98, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 944784264}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1804818320
 GameObject:
   m_ObjectHideFlags: 0
@@ -1980,7 +2013,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 944784264}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2048540671
 GameObject:
