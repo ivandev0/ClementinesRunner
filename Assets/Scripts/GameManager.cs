@@ -12,10 +12,12 @@ public class GameManager : Singleton<GameManager> {
     public float gameSpeed = 1;
     public GameObject playBtn;
     public Text scoreUi;
+    public GameObject finalPanelUi;
+    public Text finalScoreUi;
 
     void Start()
     {
-        NewGame();
+
     }
 
     void Update() {
@@ -25,8 +27,10 @@ public class GameManager : Singleton<GameManager> {
     public void GameOver() {
         gameOn = false;
 
+        finalPanelUi.SetActive(true);
+        finalScoreUi.text = Mathf.FloorToInt(score).ToString();
         playBtn.SetActive(true);
-        playBtn.GetComponentInChildren<Text>().text = "Reset";
+
     }
 
     public void NewGame() {
@@ -37,6 +41,7 @@ public class GameManager : Singleton<GameManager> {
 
         scoreUi.text = "0";
         playBtn.SetActive(false);
+        finalPanelUi.SetActive(false);
 
         StartCoroutine(ScoreCounter());
         StartCoroutine(GameSpeedController());
