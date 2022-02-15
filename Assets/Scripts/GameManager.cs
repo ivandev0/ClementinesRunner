@@ -14,7 +14,7 @@ public class GameManager : Singleton<GameManager> {
 
     void Start()
     {
-        NewGame();
+
     }
 
     void Update() {

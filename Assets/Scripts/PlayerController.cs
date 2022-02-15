@@ -34,12 +34,14 @@ public class PlayerController : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D col) {
         if (1 << col.gameObject.layer == groundLayer) {
             grounded = true;
+            animator.Play("Player_walk_full", 0, 0);
         }
     }
 
     private void Jump() {
         grounded = false;
         rigidbody2D.AddForce(new Vector2(0f, jumpForce));
+        animator.Play("Player_jump", 0, 0); // TODO select jump depending on canFire
     }
 
     private void Fire() {
