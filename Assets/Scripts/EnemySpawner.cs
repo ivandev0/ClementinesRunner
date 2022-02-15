@@ -52,7 +52,7 @@ public class EnemySpawner : MonoBehaviour {
                 Instantiate(enemy, spawnPoints[index].position, enemy.transform.rotation, spawnPosition);
             }
 
-            yield return new WaitForSeconds(spawnRate);
+            yield return new WaitForSeconds(spawnRate * (1 - 0.1f * GameManager.Instance.gameLevel));
         }
 
         spawning = false;
